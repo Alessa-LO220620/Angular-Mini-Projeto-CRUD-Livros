@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TarefaService } from './shared';
-import { ListarTarefaComponent } from './listar';
+import { LivroService } from './shared';
+import { ListarLivroComponent } from './listar';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CadastrarLivroComponent } from './cadastrar';
 
 
 
 @NgModule({
   declarations: [
-    ListarTarefaComponent
+    ListarLivroComponent,
+    CadastrarLivroComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers:[
-    TarefaService
+    LivroService
   ]
 })
-export class TarefasModule { }
+export class LivrosModule { }

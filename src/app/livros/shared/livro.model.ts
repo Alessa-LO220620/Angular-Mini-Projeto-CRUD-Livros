@@ -1,4 +1,4 @@
-export class Tarefa{
+export class Livro{
     constructor(
         public id?:number,
         public titulo?:string,

@@ -7,28 +7,28 @@
         <th>Autor</th>
         <th>Editora</th>
         <th>Ano</th>
-        <th>Disponibilidade</th>
+        <th>Disponivel</th>
         <th class="text-center">
-            <a class="btn btn-xs btn-success">
+            <a class="btn btn-xs btn-success" [routerLink]="['/livros/cadastrar']">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo
             </a>
         </th>
     </tr>
-    <tr *ngFor="let tarefa of tarefas" [class.danger]="!tarefa.status">
+    <tr *ngFor="let livro of livros" [class.danger]="!livro.status">
         <td>
-            {{tarefa.titulo}}
+            {{livro.titulo}}
         </td>
         <td>
-            {{tarefa.autor}}
+            {{livro.autor}}
         </td>
         <td>
-            {{tarefa.editora}}
+            {{livro.editora}}
         </td>
         <td>
-            {{tarefa.ano}}
+            {{livro.ano}}
         </td>
-        <td>
-            <input type="checkbox">
+        <td style="width: 70px" class="text-center">
+            <input type="checkbox" [value]="livro.id" [checked]="livro.status" (click)="alterarStatus(livro)">
         </td>
         <td class="text-center" style="width: 200px">
             <a title="Editar" alt="Editar" class="btn btn-xs btn-info">
@@ -42,4 +42,4 @@
 </tbody>
 </table>
 
-<p *ngIf="tarefas.length==0">Nenhum livro cadastrado.</p>
+<p *ngIf="livros.length==0">Nenhum livro cadastrado.</p>
